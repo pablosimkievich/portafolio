@@ -63,12 +63,12 @@ body {
 .nav-links li a {
   color: var(--color-light);
   text-decoration: none;
-  border-radius: 40px;
   margin: 25px 15px;
   padding: 10px;
   font-size: 20px;
   font-weight: 600;
   transition: all 1s;
+  user-select: none;
 }
 
 /*
@@ -133,6 +133,7 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   height: 100vh;
+  user-select: none;
 }
 
 @media (height > 700px) {
