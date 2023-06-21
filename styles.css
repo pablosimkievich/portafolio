@@ -491,8 +491,12 @@ footer p {
 }
 
 @media screen and (width < 500px) {
+  body {
+    overflow-x: hidden;
+  }
   header {
     font-size: 0.5rem;
+    width: 100%;
   }
   .intro {
     font-size: 1.4rem;
