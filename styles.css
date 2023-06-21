@@ -18,10 +18,11 @@
 
 body {
   background-color: var(--color-dark);
-  color: var(--color-light);
   max-width: 100vw;
   font-family: "Ubuntu", sans-serif;
   display: grid;
+  user-select: none;
+  overflow-x: hidden;
 }
 
 .header {
@@ -30,7 +31,8 @@ body {
   flex-wrap: nowrap;
   background-color: var(--color-less-dark);
   color: var(--color-light);
-  opacity: 0.7;
+  width: 100%;
+  position: fixed;
 }
 
 .title {
@@ -38,7 +40,6 @@ body {
   font-size: 2rem;
   font-weight: 500;
   color: var(--color-light);
-  opacity: 0.8;
 }
 
 .title-span {
@@ -127,13 +128,13 @@ body {
 .intro {
   margin: 15px 50px;
   font-size: 2.3rem;
-  opacity: 0.3;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   height: 100vh;
   user-select: none;
+  color: var(--color-medium-light);
 }
 
 @media (height > 700px) {
@@ -155,16 +156,15 @@ body {
 
 .skills-title {
   font-size: 2.5rem;
-  color: var(--color-light);
-  opacity: 0.3;
-  margin: 0px 0px;
+  color: var(--color-medium-light);
+  margin: 30px 0px;
+  padding: 15px 0;
 }
 
 .skills-description {
   font-size: 1.5rem;
-  color: var(--color-light);
+  color: var(--color-medium-light);
   margin: 50px 25px 30px 0;
-  opacity: 0.3;
 }
 
 .skills-wrapper {
@@ -209,12 +209,20 @@ body {
 
 .projects {
   padding: 10px 50px;
+  color: var(--color-medium-light);
+}
+
+.projects-title {
+  font-size: 2.5rem;
+  color: var(--color-medium-light);
+  margin: 60px 0px;
+  padding: 20px 0;
 }
 
 .projects-description {
   font-size: 1.5rem;
-  color: var(--color-light);
-  opacity: 0.3;
+  color: var(--color-medium-light);
+  margin: 50px 25px 0 0;
 }
 
 .projects-wrapper {
@@ -237,20 +245,6 @@ body {
   margin: 20px 5px;
 }
 
-.projects-title {
-  font-size: 2.5rem;
-  color: var(--color-light);
-  opacity: 0.3;
-  margin: 50px 0px;
-}
-
-.projects-description {
-  font-size: 1.5rem;
-  color: var(--color-light);
-  margin: 50px 25px 0 0;
-  opacity: 0.3;
-}
-
 .project-div {
   display: flex;
   flex-direction: column;
@@ -264,7 +258,6 @@ body {
   text-align: center;
   font-size: 1.4rem;
   color: var(--color-medium-light);
-  opacity: 0.7;
 }
 
 .buttons-wrapper {
@@ -276,7 +269,6 @@ body {
   font-family: "Ubuntu", sans-serif;
   background-color: var(--color-medium-less-dark);
   color: var(--color-medium-light);
-  opacity: 1;
   margin: 10px;
   padding: 10px;
   border: none;
@@ -294,20 +286,20 @@ body {
 .contact {
   margin: 50px 0;
   padding: 10px 50px;
+  color: var(--color-medium-light);
 }
 
 .contact-title {
   font-size: 2.5rem;
-  color: var(--color-light);
-  opacity: 0.3;
+  color: var(--color-medium-light);
   margin: 50px 0px;
+  padding: 30px 0;
 }
 
 .contact-description {
   font-size: 1.5rem;
-  color: var(--color-light);
+  color: var(--color-medium-light);
   margin: 50px 0px;
-  opacity: 0.3;
 }
 
 .all-3d-form-wrapper {
@@ -325,6 +317,7 @@ canvas {
   width: 100%;
   height: 100%;
   transform: translateY(9%);
+  z-index: 10;
 }
 
 .form {
@@ -393,7 +386,6 @@ canvas {
 
 footer {
   background-color: var(--color-less-dark);
-  opacity: 0.7;
   display: grid;
   align-self: end;
   min-height: 90px;
@@ -414,6 +406,8 @@ footer p {
   .header {
     font-size: 1rem;
     max-height: 10vh;
+    position: fixed;
+    width: 100vw;
   }
   .nav-links {
     position: absolute;
@@ -427,6 +421,7 @@ footer p {
     width: 50%;
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
+    z-index: 50;
   }
   .nav-links li {
     opacity: 0;
