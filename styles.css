@@ -401,7 +401,7 @@ footer p {
   color: var(--color-dark);
 }
 
-@media (width < 800px) {
+@media screen and (width < 800px) {
   body {
     overflow-x: hidden;
   }
@@ -490,7 +490,7 @@ footer p {
   }
 }
 
-@media (width < 500px) {
+@media screen and (width < 500px) {
   header {
     font-size: 0.5rem;
   }
