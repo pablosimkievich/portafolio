@@ -51,7 +51,42 @@ body {
   margin: 25px 40px;
 }
 
-.navbar-items {
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links li a {
+  color: var(--color-light);
+  text-decoration: none;
+  border-radius: 40px;
+  margin: 25px 15px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  transition: all 1s;
+}
+
+/*
+.nav-links li a:hover {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  border-radius: 40px;
+  margin: 25px 15px;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px;
+  width: 150px;
+  transition: all 1s;
+}
+*/
+
+/*
+.navbar-links {
   color: var(--color-light);
   text-decoration: none;
   border-radius: 40px;
@@ -73,7 +108,22 @@ body {
   width: 150px;
   transition: all 1s;
 }
+*/
 
+.burger {
+  display: none;
+  color: var(--color-light);
+  cursor: pointer;
+  margin: 25px 15px;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-light);
+  margin: 5px;
+  transition: all 0.6s ease;
+}
 .intro {
   margin: 15px 50px;
   font-size: 2.3rem;
@@ -184,7 +234,6 @@ body {
   border: none;
   border-radius: 8px;
   margin: 20px 5px;
-  
 }
 
 .projects-title {
@@ -358,8 +407,32 @@ footer p {
 }
 
 @media (width < 800px) {
+  body {
+    overflow-x: hidden;
+  }
   .header {
     font-size: 1rem;
+    max-height: 10vh;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 91vh;
+    top: 9vh;
+    background-color: var(--color-less-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+    margin: 0px 40px;
   }
   .intro {
     font-size: 2.5rem;
@@ -484,4 +557,33 @@ footer p {
     color: var(--color-light);
     min-height: 50px;
   }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+      opacity: 0;
+      transform: translateX(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0px);
+  }
+}
+
+
+/* ! transforma el burger menu en una 'X' */ 
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+ opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
 }
